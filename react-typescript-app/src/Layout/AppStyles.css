@@ -6,13 +6,15 @@
 .main-header {
     background-color: #222;
     padding-top: 1%;
-    padding-bottom: 3%;
+    padding-bottom: 3.5%;
 }
 
 .main-main {
     background-color: #eee;
     padding-top: 3%;
     padding-bottom: 3%;
+    padding-left: 2%;
+    padding-right: 2%;
 }
 
 .main-routes {
@@ -21,7 +23,9 @@
 }
 
 .main-footer {
-    background-color: #bbb;
-    padding-top: 3%;
+    background-color: #ccc;
+    padding-top: 1%;
     padding-bottom: 3%;
+    padding-left: 2%;
+    padding-right: 2%;
 }

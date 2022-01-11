@@ -1,3 +1,17 @@
+.hrefbutton {
+    margin: 3%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+    border-radius: 9px;
+    width: 22%;
+
+    background-color: black;
+    color: white;
+    float: left;
+}
+
 .header-main-button {
     display: inline-block;
     border-radius: 10px;

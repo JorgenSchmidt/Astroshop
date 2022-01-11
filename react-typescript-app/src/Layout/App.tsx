@@ -2,15 +2,19 @@ import React, { Component } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './AppStyles.css';
 
-import HeaderMainComponent from './HeaderComponents/HeaderMainComponent'
+import HeaderMain from './HeaderComponents/HeaderMain'
 import HeaderMenu from './HeaderComponents/HeaderMenu';
+
+import FooterMain from './FooterComponents/FooterMain';
+import FooterMenu from './FooterComponents/FooterMenu';
+
 
 class App extends Component {
     render() {
         return (
             <div className="main">
                 <div className="main-header">
-                    <HeaderMainComponent/>
+                    <HeaderMain/>
                     <HeaderMenu/>
                 </div>
                 <div className="main-main">
@@ -21,7 +25,10 @@ class App extends Component {
                         </Routes>
                     </div>
                 </div>
-                <div className="main-footer"></div>
+                <div className="main-footer">
+                    <FooterMenu/>
+                    <FooterMain/>
+                </div>
             </div>
         )
     }

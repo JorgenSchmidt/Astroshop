@@ -3,7 +3,7 @@ import "./HeaderStyles.css"
 
 import { HeaderMainButton } from "../ButtonComponents/HeaderMainButton";
 
-class HeaderMainComponent extends Component {
+class HeaderMain extends Component {
 
     callWindow = () => {
         console.log("Q");
@@ -23,11 +23,11 @@ class HeaderMainComponent extends Component {
                     />
                 </div>
                 <div className="header-main-lower">
-                    <h1 className="font-white font-center font-large"> Astroshop! </h1>
+                    <p className="font-white font-bold font-center font-large"> Astroshop!</p>
                 </div>
             </div>
         )
     }
 }
 
-export default HeaderMainComponent;
+export default HeaderMain;

@@ -1,0 +1,41 @@
+.footer-main {
+    margin-left: 2%;
+    margin-left: 2%;
+}
+
+.footer-contacts {
+    text-align: center;
+}
+
+.footer-contacts-box {
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 2%;
+    margin-bottom: 1.5%;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.footer-policy {
+    text-align: justify;
+}
+
+.footer-menu {
+    text-align: center;
+}
+
+.menu-hrefbox {
+    display: inline-block;
+    text-align: justify;
+    vertical-align: top;
+    margin-top: 2%;
+    margin-bottom: 1.5%;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.menu-element {
+    margin-top: 6%;
+    margin-bottom: 7%;
+}
