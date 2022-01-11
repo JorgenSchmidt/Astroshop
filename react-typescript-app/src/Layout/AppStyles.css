@@ -1,0 +1,27 @@
+.main {
+    margin: 0px;
+    font-size: 100%;
+}
+
+.main-header {
+    background-color: #222;
+    padding-top: 1%;
+    padding-bottom: 3%;
+}
+
+.main-main {
+    background-color: #eee;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.main-routes {
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.main-footer {
+    background-color: #bbb;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}

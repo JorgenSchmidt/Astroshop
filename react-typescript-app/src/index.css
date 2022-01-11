@@ -11,3 +11,41 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.font-nomargin {
+  margin: 0px;
+}
+
+.font-white {
+  color: white;
+}
+
+.font-center {
+  text-align: center;
+}
+
+.font-large {
+  font-size: 3.2vw;
+}
+
+.font-medium {
+  font-size: 2.9vw;
+}
+
+.font-small {
+  font-size: 2.6vw;
+}
+
+@media screen and (min-width: 900px) {
+  .font-large {
+    font-size: 2.9vw;
+  }
+  
+  .font-medium {
+    font-size: 2vw;
+  }
+  
+  .font-small {
+    font-size: 1.09vw;
+  }
+}
