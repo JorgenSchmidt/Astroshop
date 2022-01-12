@@ -7,7 +7,21 @@
     border-radius: 9px;
     width: 22%;
 
-    background-color: black;
+    background-color: #111;
+    color: white;
+    float: left;
+}
+
+.hrefbutton:hover {
+    margin: 3%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+    border-radius: 9px;
+    width: 22%;
+
+    background-color: #222;
     color: white;
     float: left;
 }

@@ -1,55 +1,38 @@
 import { Component } from "react";
 import "./FooterStyles.css";
-import {FooterMenuElement} from "./FooterMenuElement"
+
+import { FooterLinksInfo } from "../ComponentInformation/FooterLinksInfo"
+import GetFooterLinksInfo  from "../Services/GetFooterLinksInfo"
 
 class FooterMenu extends Component {
+
     render() {
+
+        const aboutlinks = GetFooterLinksInfo(
+            FooterLinksInfo.filter(components => components.cathegory === "About")
+        )
+
+        const accountlinks = GetFooterLinksInfo(
+            FooterLinksInfo.filter(components => components.cathegory === "Account")
+        )
+
+        const lectorylinks = GetFooterLinksInfo(
+            FooterLinksInfo.filter(components => components.cathegory === "Lectory")
+        )
+
         return (
             <div className="footer-menu">
                 <div className="menu-hrefbox">
                     <p className="font-mediumsmall font-nomargin font-bold"> О проекте </p>
-                    <FooterMenuElement
-                        content="О сайте"
-                        hrefto="/"
-                    />
-                    <FooterMenuElement
-                        content="Наши контакты"
-                        hrefto="/"
-                    />
-                    <FooterMenuElement
-                        content="Наш интернет-магазин"
-                        hrefto="/"
-                    />
-                    <FooterMenuElement
-                        content="Отзывы"
-                        hrefto="/"
-                    />
+                    {aboutlinks}
                 </div>
                 <div className="menu-hrefbox">
                     <p className="font-mediumsmall font-nomargin font-bold"> Аккаунт </p>
-                    <FooterMenuElement
-                        content="Войти"
-                        hrefto="/"
-                    />
-                    <FooterMenuElement
-                        content="Зарегистрироваться"
-                        hrefto="/"
-                    />
-                    <FooterMenuElement
-                        content="Восстановить пароль"
-                        hrefto="/"
-                    />
+                    {accountlinks}
                 </div>
                 <div className="menu-hrefbox"> 
                     <p className="font-mediumsmall font-nomargin font-bold"> Наш лекторий </p>
-                    <FooterMenuElement
-                        content="Астрономия"
-                        hrefto="/"
-                    />
-                    <FooterMenuElement
-                        content="Астрофизика"
-                        hrefto="/"
-                    />
+                    {lectorylinks}
                 </div>
             </div>
         )

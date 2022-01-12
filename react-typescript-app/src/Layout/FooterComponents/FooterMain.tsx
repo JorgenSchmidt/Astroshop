@@ -1,9 +1,13 @@
 import { Component } from "react";
 
-import {HrefButton} from "../ButtonComponents/HrefButton"
+import { OutsideLinksInfo } from "../ComponentInformation/OutsideLinksInfo"
+import GetOutsideLinksInfo from "../Services/GetOutsideLinksInfo";
  
 class FooterMain extends Component {
     render() {
+
+        const outsidelinks = GetOutsideLinksInfo(OutsideLinksInfo);
+
         return (
             <div className="footer-main">
                 <hr/>
@@ -13,31 +17,8 @@ class FooterMain extends Component {
                         <p className="font-medium font-bold">8-900-100-00-00</p>
                     </div>
                     <div className="footer-contacts-box">
-                    <p className="font-mediumsmall font-bold"> Социальные сети: </p>
-                        <HrefButton
-                            content="GitHub"
-                            hrefto="https://github.com/JorgenSchmidt"
-                        />
-                        <HrefButton
-                            content="YouTube"
-                            hrefto="https://youtube.com"
-                        />
-                        <HrefButton
-                            content="VK"
-                            hrefto="https://vk.com"
-                        />
-                        <HrefButton
-                            content="Twitter"
-                            hrefto="https://twitter.com"
-                        />
-                        <HrefButton
-                            content="Facebook"
-                            hrefto="https://facebook.com"
-                        />
-                        <HrefButton
-                            content="Instagram"
-                            hrefto="https://instagram.com"
-                        />
+                        <p className="font-mediumsmall font-bold"> Социальные сети: </p>
+                        {outsidelinks}
                     </div>
                 </div>
                 <hr/>
