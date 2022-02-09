@@ -1,0 +1,45 @@
+.shop {
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.shop-inside {
+    text-align: center;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.shop-content {
+
+    padding: 1%;
+    vertical-align: top;
+    word-wrap: break-word;
+}
+
+.shop-menu {
+    margin-left: 3%;
+    margin-right: 3%;
+    padding: 1%;
+    text-align: center;
+}
+
+.shop-menu-element {
+    margin-left: 0.6%;
+    margin-right: 0.6%;
+    display: inline-block;
+}
+
+.product-card {
+    border: 2px solid #599;
+    border-radius: 21px;
+    
+    background-color: #e7e8e8;
+
+    padding: 2%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    vertical-align: top;
+    word-break: break-all;
+}

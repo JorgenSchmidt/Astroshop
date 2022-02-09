@@ -5,4 +5,9 @@
     <RootNamespace>WEB_API</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Astroshop.Core.csproj" />
+    <ProjectReference Include="..\Data\Astroshop.Data.PostgreeSQL.csproj" />
+  </ItemGroup>
+
 </Project>

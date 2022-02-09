@@ -1,5 +1,21 @@
 {
   "Version": 1,
-  "ProjectMap": {},
-  "NextColorIndex": 0
+  "ProjectMap": {
+    "34678d3a-6c5d-4493-98c0-be14e59f8007": {
+      "ProjectGuid": "34678d3a-6c5d-4493-98c0-be14e59f8007",
+      "DisplayName": "Astroshop.Core",
+      "ColorIndex": 0
+    },
+    "50a1c31b-cdb7-4a16-9dc7-cb3ef0c66930": {
+      "ProjectGuid": "50a1c31b-cdb7-4a16-9dc7-cb3ef0c66930",
+      "DisplayName": "Astroshop.Data.PostgreeSQL",
+      "ColorIndex": 1
+    },
+    "8fcb20b3-1395-408c-9cf0-eaa2ae33e23e": {
+      "ProjectGuid": "8fcb20b3-1395-408c-9cf0-eaa2ae33e23e",
+      "DisplayName": "Astroshop.WEB-API",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hEAisMpRe5fQF+sb4OEFQny9dsb9buIQ/eDfSULhfk+bHTb4W5V4mWLds566Garm/B+gacMIi4xJKhckSUj26w==",
+  "dgSpecHash": "3JeqonBFpF3k2TMTsvb7QYUg1rolMkl9f72cxldf7CLXvYqLWMDvEC6PTV/BV6u8DHuQ7m4OEykxsK3U71AY8g==",
   "success": true,
-  "projectFilePath": "D:\\ProgramData\\Projects\\Astroshop\\Astroshop.Backend\\WEB-API\\WEB-API.csproj",
+  "projectFilePath": "D:\\ProgramData\\Projects\\Astroshop\\Astroshop.Backend\\WEB-API\\Astroshop.WEB-API.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

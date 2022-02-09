@@ -1,0 +1,18 @@
+.main-mainpage, .main-contactspage, .main-feedbackspage {
+    padding-left:   4%;
+    padding-right:  4%;
+}
+
+.main-box {
+    text-align: center;
+}
+
+.main-element {
+    margin-left: 1%;
+    margin-right: 1%;
+    display: inline-block;
+}
+
+.main-errorpage {
+    text-align: center;
+}

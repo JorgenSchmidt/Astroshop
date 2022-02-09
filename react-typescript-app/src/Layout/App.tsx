@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './AppStyles.css';
 
@@ -8,6 +8,16 @@ import HeaderMenu from './HeaderComponents/HeaderMenu';
 import FooterMain from './FooterComponents/FooterMain';
 import FooterMenu from './FooterComponents/FooterMenu';
 
+import { ErrorPage } from './MainComponents/ErrorPage';
+import { MainPage } from './MainComponents/MainPage';
+import { ContactsPage } from './MainComponents/ContactsPage';
+import { FeedbacksPage } from './MainComponents/FeedbacksPage';
+
+import LoginPage from './AccountComponents/LoginPage';
+import RegisterPage from './AccountComponents/RegisterPage';
+import RecoverPasswordPage from './AccountComponents/RecoverPasswordPage';
+
+import ShopPage from './ShopComponents/ShopPage'
 
 class App extends Component {
     render() {
@@ -20,8 +30,17 @@ class App extends Component {
                 <div className="main-main">
                     <div className="main-routes">
                         <Routes>
-                            <Route path = "/" element={<p>Main</p>}></Route>
-                            <Route path = "*" element={<p>Error 404!</p>}/>
+                            <Route path = "/contacts" element={<ContactsPage/>}/>
+                            <Route path = "/feedbacks" element={<FeedbacksPage/>}/>
+
+                            <Route path = "/login" element={<LoginPage/>}/>
+                            <Route path = "/register" element={<RegisterPage/>}/>
+                            <Route path = "/recoverpass" element={<RecoverPasswordPage/>}/>
+
+                            <Route path = "/shop" element={<ShopPage/>}/>
+
+                            <Route path = "/" element={<MainPage/>}/>
+                            <Route path = "*" element={<ErrorPage/>}/>
                         </Routes>
                     </div>
                 </div>

@@ -1,0 +1,12 @@
+D:\ProgramData\Projects\Astroshop\Astroshop.Backend\Core\bin\Debug\net5.0\Astroshop.Core.deps.json
+D:\ProgramData\Projects\Astroshop\Astroshop.Backend\Core\bin\Debug\net5.0\Astroshop.Core.dll
+D:\ProgramData\Projects\Astroshop\Astroshop.Backend\Core\bin\Debug\net5.0\ref\Astroshop.Core.dll
+D:\ProgramData\Projects\Astroshop\Astroshop.Backend\Core\bin\Debug\net5.0\Astroshop.Core.pdb
+D:\ProgramData\Projects\Astroshop\Astroshop.Backend\Core\obj\Debug\net5.0\Astroshop.Core.csproj.AssemblyReference.cache
+D:\ProgramData\Projects\Astroshop\Astroshop.Backend\Core\obj\Debug\net5.0\Astroshop.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\ProgramData\Projects\Astroshop\Astroshop.Backend\Core\obj\Debug\net5.0\Astroshop.Core.AssemblyInfoInputs.cache
+D:\ProgramData\Projects\Astroshop\Astroshop.Backend\Core\obj\Debug\net5.0\Astroshop.Core.AssemblyInfo.cs
+D:\ProgramData\Projects\Astroshop\Astroshop.Backend\Core\obj\Debug\net5.0\Astroshop.Core.csproj.CoreCompileInputs.cache
+D:\ProgramData\Projects\Astroshop\Astroshop.Backend\Core\obj\Debug\net5.0\Astroshop.Core.dll
+D:\ProgramData\Projects\Astroshop\Astroshop.Backend\Core\obj\Debug\net5.0\ref\Astroshop.Core.dll
+D:\ProgramData\Projects\Astroshop\Astroshop.Backend\Core\obj\Debug\net5.0\Astroshop.Core.pdb

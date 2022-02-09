@@ -11,13 +11,13 @@ export default class FooterLink {
 }
 
 export const FooterLinksInfo = [
-    new FooterLink("О сайте",               "/",    "About"),
-    new FooterLink("Наши контакты",         "/",    "About"),
-    new FooterLink("Наш интернет-магазин",  "/",    "About"),
-    new FooterLink("Отзывы",                "/",    "About"),
-    new FooterLink("Войти",                 "/",    "Account"),
-    new FooterLink("Зарегистрироваться",    "/",    "Account"),
-    new FooterLink("Восстановить пароль",   "/",    "Account"),
-    new FooterLink("Астрономия",            "/",    "Lectory"),
-    new FooterLink("Астрофизика",           "/",    "Lectory")
+    new FooterLink("О сайте",               "/",                "About"),
+    new FooterLink("Наши контакты",         "/contacts",        "About"),
+    new FooterLink("Наш интернет-магазин",  "/shop",            "About"),
+    new FooterLink("Отзывы",                "/feedbacks",       "About"),
+    new FooterLink("Войти",                 "/login",           "Account"),
+    new FooterLink("Зарегистрироваться",    "/register",        "Account"),
+    new FooterLink("Восстановить пароль",   "/recoverpass",     "Account"),
+    new FooterLink("Астрономия",            "/astronomy",       "Lectory"),
+    new FooterLink("Астрофизика",           "/astrophysics",    "Lectory")
 ]

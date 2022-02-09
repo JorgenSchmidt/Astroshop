@@ -13,15 +13,15 @@ class HeaderMenu extends Component {
                 />
                 <HeaderMenuButton
                     content="Об астрономии"
-                    hrefname="/"
+                    hrefname="/astronomy"
                 />
                 <HeaderMenuButton
                     content="Об астрофизике"
-                    hrefname="/"
+                    hrefname="/astrophysics"
                 />
                 <HeaderMenuButton
                     content="Интернет-магазин"
-                    hrefname="/"
+                    hrefname="/shop"
                 />
             </div>
         )

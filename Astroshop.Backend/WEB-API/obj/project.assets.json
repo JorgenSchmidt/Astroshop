@@ -1,11 +1,49 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {}
+    "net5.0": {
+      "Astroshop.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Astroshop.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Astroshop.Core.dll": {}
+        }
+      },
+      "Astroshop.Data.PostgreeSQL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Astroshop.Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Astroshop.Data.PostgreeSQL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Astroshop.Data.PostgreeSQL.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Astroshop.Core/1.0.0": {
+      "type": "project",
+      "path": "../Core/Astroshop.Core.csproj",
+      "msbuildProject": "../Core/Astroshop.Core.csproj"
+    },
+    "Astroshop.Data.PostgreeSQL/1.0.0": {
+      "type": "project",
+      "path": "../Data/Astroshop.Data.PostgreeSQL.csproj",
+      "msbuildProject": "../Data/Astroshop.Data.PostgreeSQL.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net5.0": []
+    "net5.0": [
+      "Astroshop.Core >= 1.0.0",
+      "Astroshop.Data.PostgreeSQL >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Joe\\.nuget\\packages\\": {}
@@ -13,9 +51,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ProgramData\\Projects\\Astroshop\\Astroshop.Backend\\WEB-API\\WEB-API.csproj",
-      "projectName": "WEB-API",
-      "projectPath": "D:\\ProgramData\\Projects\\Astroshop\\Astroshop.Backend\\WEB-API\\WEB-API.csproj",
+      "projectUniqueName": "D:\\ProgramData\\Projects\\Astroshop\\Astroshop.Backend\\WEB-API\\Astroshop.WEB-API.csproj",
+      "projectName": "Astroshop.WEB-API",
+      "projectPath": "D:\\ProgramData\\Projects\\Astroshop\\Astroshop.Backend\\WEB-API\\Astroshop.WEB-API.csproj",
       "packagesPath": "C:\\Users\\Joe\\.nuget\\packages\\",
       "outputPath": "D:\\ProgramData\\Projects\\Astroshop\\Astroshop.Backend\\WEB-API\\obj\\",
       "projectStyle": "PackageReference",
@@ -33,7 +71,14 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\ProgramData\\Projects\\Astroshop\\Astroshop.Backend\\Core\\Astroshop.Core.csproj": {
+              "projectPath": "D:\\ProgramData\\Projects\\Astroshop\\Astroshop.Backend\\Core\\Astroshop.Core.csproj"
+            },
+            "D:\\ProgramData\\Projects\\Astroshop\\Astroshop.Backend\\Data\\Astroshop.Data.PostgreeSQL.csproj": {
+              "projectPath": "D:\\ProgramData\\Projects\\Astroshop\\Astroshop.Backend\\Data\\Astroshop.Data.PostgreeSQL.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

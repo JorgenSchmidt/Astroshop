@@ -1,0 +1,15 @@
+D:\ProgramData\Projects\Astroshop\Astroshop.Backend\Data\bin\Debug\net5.0\Astroshop.Data.PostgreeSQL.deps.json
+D:\ProgramData\Projects\Astroshop\Astroshop.Backend\Data\bin\Debug\net5.0\Astroshop.Data.PostgreeSQL.dll
+D:\ProgramData\Projects\Astroshop\Astroshop.Backend\Data\bin\Debug\net5.0\ref\Astroshop.Data.PostgreeSQL.dll
+D:\ProgramData\Projects\Astroshop\Astroshop.Backend\Data\bin\Debug\net5.0\Astroshop.Data.PostgreeSQL.pdb
+D:\ProgramData\Projects\Astroshop\Astroshop.Backend\Data\bin\Debug\net5.0\Astroshop.Core.dll
+D:\ProgramData\Projects\Astroshop\Astroshop.Backend\Data\bin\Debug\net5.0\Astroshop.Core.pdb
+D:\ProgramData\Projects\Astroshop\Astroshop.Backend\Data\obj\Debug\net5.0\Astroshop.Data.PostgreeSQL.csproj.AssemblyReference.cache
+D:\ProgramData\Projects\Astroshop\Astroshop.Backend\Data\obj\Debug\net5.0\Astroshop.Data.PostgreeSQL.GeneratedMSBuildEditorConfig.editorconfig
+D:\ProgramData\Projects\Astroshop\Astroshop.Backend\Data\obj\Debug\net5.0\Astroshop.Data.PostgreeSQL.AssemblyInfoInputs.cache
+D:\ProgramData\Projects\Astroshop\Astroshop.Backend\Data\obj\Debug\net5.0\Astroshop.Data.PostgreeSQL.AssemblyInfo.cs
+D:\ProgramData\Projects\Astroshop\Astroshop.Backend\Data\obj\Debug\net5.0\Astroshop.Data.PostgreeSQL.csproj.CoreCompileInputs.cache
+D:\ProgramData\Projects\Astroshop\Astroshop.Backend\Data\obj\Debug\net5.0\Astroshop.Data.PostgreeSQL.csproj.CopyComplete
+D:\ProgramData\Projects\Astroshop\Astroshop.Backend\Data\obj\Debug\net5.0\Astroshop.Data.PostgreeSQL.dll
+D:\ProgramData\Projects\Astroshop\Astroshop.Backend\Data\obj\Debug\net5.0\ref\Astroshop.Data.PostgreeSQL.dll
+D:\ProgramData\Projects\Astroshop\Astroshop.Backend\Data\obj\Debug\net5.0\Astroshop.Data.PostgreeSQL.pdb
