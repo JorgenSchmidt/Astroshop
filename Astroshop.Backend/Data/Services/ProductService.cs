@@ -16,8 +16,16 @@ namespace Astroshop.Data.PostgreeSQL.Services
                 Body = new List<Product>() { 
                     new Product() { Name = "Product_1", Category = "Category", Content = "Content", ID = 1, Price = "400", RefTo = "ref-1" },
                     new Product() { Name = "Product_2", Category = "Category", Content = "Content", ID = 2, Price = "400", RefTo = "ref-2" },
-                    new Product() { Name = "Product_3", Category = "Test", Content = "Content", ID = 2, Price = "400", RefTo = "ref-3" },
-                    new Product() { Name = "Product_4", Category = "Category", Content = "Content", ID = 2, Price = "400", RefTo = "ref-4" },
+                    new Product() { Name = "Product_3", Category = "Test", Content = "Content", ID = 3, Price = "400", RefTo = "ref-3" },
+                    new Product() { Name = "Product_4", Category = "Category", Content = "Content", ID = 4, Price = "400", RefTo = "ref-4" },
+                    new Product() { 
+                        Name = "Product_5_LONGLONG", 
+                        Category = "Long!", 
+                        Content = "Long.Long.Long.Long.Long.Long.Long.Long.Long.Long.Long.Long.Long.Long.Long.Long.Long.Long.Long.Long.Long.Long.Long.Long.Long.Long.Long.Long.Long.Long.Long.Long.Long.Long.Long.Long.Long.Long.Long.Long.Long.Long.Long.Long.Long.Long.Long.", 
+                        ID = 5, 
+                        Price = "4000", 
+                        RefTo = "ref-5" 
+                    },
                 },
                 Status = 200
             };

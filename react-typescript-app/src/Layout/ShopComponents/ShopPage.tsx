@@ -10,10 +10,17 @@ import GetShopMenuElements from "../Services/ShopServices/GetShopMenuElements"
 export default class ShopPage extends Component {
 
     // Class fields
-    status:         number;
-    pages:   Array<Product>;
-    topics:         Array<MenuElement>
-    response:       any
+
+    status:             number;
+    currenttopic:       string;
+    isFirstUpload:      boolean;
+
+    pages:              Array<Product>;
+    topics:             Array<MenuElement>
+    
+    response:           any
+    currenttopics:      any
+    currentnewsdisplay: any
 
     // Constructor of class
     constructor(props: any) {
@@ -21,10 +28,15 @@ export default class ShopPage extends Component {
         super(props)
 
         this.status = 0;
-        this.response = null
-        this.pages = []
-        this.topics = []
+        this.currenttopic  = "";
+        this.isFirstUpload = true;
 
+        this.pages = [];
+        this.topics = [];
+
+        this.response = null;
+        this.currenttopics = null;
+        this.currentnewsdisplay = null
     } 
 
     // Life cycle methods
@@ -59,10 +71,27 @@ export default class ShopPage extends Component {
     parseProductListToMenuElements() {
         // Crutch for presentation getted ProductList as MenuElements massive
         let categories = new Array<string>();
+        this.topics.push(
+            new MenuElement(
+                this.response.body.length, 
+                "All", 
+                () => this.setState(
+                    this.currentnewsdisplay = this.selectShopElements("")
+                )
+            )
+        )
         this.pages.forEach((curPage) => {
             if (categories.indexOf(curPage.Category) === -1) {
                 categories.push(curPage.Category)
-                this.topics.push(new MenuElement(1, curPage.Category, () => {}))
+                this.topics.push(
+                    new MenuElement(
+                        1, 
+                        curPage.Category, 
+                        () => this.setState(
+                            this.currentnewsdisplay = this.selectShopElements(curPage.Category)
+                        )
+                    )
+                )
             }
             else {
                 for (let i = 0; i < this.topics.length; i++) {
@@ -75,22 +104,38 @@ export default class ShopPage extends Component {
         })
     }
 
+    selectShopElements = (category: string) => {
+        var currentnewsdisplay
+        if (category !== "") {
+            const filter = this.pages.filter(ans => ans.Category === category);
+            currentnewsdisplay = GetProductElements(filter)
+        }
+        else {
+            currentnewsdisplay = GetProductElements(this.pages)
+        }
+        return currentnewsdisplay;
+    }
+
     render() {
-        if (this.response !== null) {
+
+        if (this.response !== null && this.isFirstUpload) {
             this.parsejsonToProductList()
             this.parseProductListToMenuElements();
+            this.currentnewsdisplay = this.selectShopElements(this.currenttopic);
+            this.isFirstUpload = false;
         }
-        let currentnewsdisplay = GetProductElements(this.pages);
-        let currenttopics      = GetShopMenuElements(this.topics, "Test");
+        
+        this.currenttopics = GetShopMenuElements(this.topics);
+
         return(
             <div className="shop">
                 <p className="font-medium font-center font-bold">Наш магазин</p>
                 <div className="shop-inside">
                     <div className="shop-menu">
-                        {currenttopics}
+                        {this.currenttopics}
                     </div>
                     <div className="shop-content">
-                        {currentnewsdisplay}
+                        {this.currentnewsdisplay}
                     </div>
                 </div>
             </div>

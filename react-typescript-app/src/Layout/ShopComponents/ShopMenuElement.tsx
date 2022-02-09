@@ -14,11 +14,11 @@ export default class MenuElement {
 
 export const ShopMenuElement = ({count, category, clickhandler}: MenuElement) => {
     return (
-        <div className="shop-menu-element">
-            <p  className="font-nomargin font-smallmedium font-tograyhover"
-            onClick={clickhandler}
-            >
-                { category[0].toUpperCase() + category.substring(1)} ({count})
+        <div className="shop-menu-element" onClick={clickhandler}>
+            <p  className="font-nomargin font-smallmedium font-tograyhover">
+                { 
+                    category[0].toUpperCase() + category.substring(1)} ({count}
+                )
             </p>
         </div>
     )
