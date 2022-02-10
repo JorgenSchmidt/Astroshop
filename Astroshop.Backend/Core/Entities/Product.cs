@@ -10,6 +10,6 @@ namespace Astroshop.Core.Entities
         public string Category { get; set; }
         public string Content { get; set; }
         public string Price { get; set; }
-        public string RefTo { get; set; }
+        public int Count { get; set; }
     }
 }

@@ -9,6 +9,7 @@ export default function GetProductElements (from: Array<Product>) {
                     ID = {curObject.ID}
                     Category = {curObject.Category}
                     Name = {curObject.Name}
+                    Count = {curObject.Count}
                     Content = {cutCategoryContent}
                     Price = {curObject.Price}
                     RefTo = {curObject.RefTo}

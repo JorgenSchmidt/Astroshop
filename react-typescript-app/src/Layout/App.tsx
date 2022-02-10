@@ -18,6 +18,7 @@ import RegisterPage from './AccountComponents/RegisterPage';
 import RecoverPasswordPage from './AccountComponents/RecoverPasswordPage';
 
 import ShopPage from './ShopComponents/ShopPage'
+import ProductPage from './ShopComponents/ProductPage';
 
 class App extends Component {
     render() {
@@ -38,6 +39,7 @@ class App extends Component {
                             <Route path = "/recoverpass" element={<RecoverPasswordPage/>}/>
 
                             <Route path = "/shop" element={<ShopPage/>}/>
+                            <Route path = "/shop/:name" element = {<ProductPage/>}></Route>
 
                             <Route path = "/" element={<MainPage/>}/>
                             <Route path = "*" element={<ErrorPage/>}/>

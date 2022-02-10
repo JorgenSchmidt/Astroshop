@@ -10,7 +10,6 @@
 }
 
 .shop-content {
-
     padding: 1%;
     vertical-align: top;
     word-wrap: break-word;
@@ -41,5 +40,9 @@
     margin-top: 2%;
     margin-bottom: 2%;
     vertical-align: top;
+    word-break: break-all;
+}
+
+.product-page {
     word-break: break-all;
 }

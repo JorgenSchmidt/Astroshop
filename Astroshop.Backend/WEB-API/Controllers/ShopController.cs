@@ -1,10 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
-
-using Astroshop.Data.PostgreeSQL.Services;
+﻿using Astroshop.Core.Enums;
 using Astroshop.Core.Interfaces;
 using Astroshop.Core.Responses;
-using Astroshop.Core.Entities;
+
+using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Threading.Tasks;
 
 namespace WEB_API.Controllers
 {
@@ -21,9 +21,37 @@ namespace WEB_API.Controllers
         }
 
         [HttpGet("get-all")]
-        public Task<BasicResponse<Product>> GetAll()
+        public async Task<object> GetAll()
         {
-            return _service.GetAll();
+            try
+            {
+                return await _service.GetAll();
+            }
+            catch (Exception ex)
+            {
+                return new ErrorResponse
+                {
+                    Body = ex.Message,
+                    Status = ResponseStatus.InternalErrorServer
+                };
+            }
+        }
+
+        [HttpGet("get/{id}")]
+        public async Task<object> Get(int id)
+        {
+            try
+            {
+                return await _service.GetById(id);
+            }
+            catch (Exception ex)
+            {
+                return new ErrorResponse
+                {
+                    Body = ex.Message,
+                    Status = ResponseStatus.InternalErrorServer
+                };
+            }
         }
     }
 }

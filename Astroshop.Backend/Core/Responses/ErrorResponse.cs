@@ -1,14 +1,13 @@
 ﻿using Astroshop.Core.Enums;
-using System.Collections.Generic;
 
 namespace Astroshop.Core.Responses
 {
-    public class BasicResponse<T> where T : class
+    public class ErrorResponse
     {
         /// <summary>
         /// Body of response
         /// </summary>
-        public List<T> Body { get; set; }
+        public string Body { get; set; }
         /// <summary>
         /// Status of response
         /// </summary>

@@ -11,16 +11,16 @@ export default class ShopPage extends Component {
 
     // Class fields
 
-    status:             number;
-    currenttopic:       string;
-    isFirstUpload:      boolean;
+    status:                 number;
+    currenttopic:           string;
+    isFirstUpload:          boolean;
 
-    pages:              Array<Product>;
-    topics:             Array<MenuElement>
+    pages:                  Array<Product>;
+    topics:                 Array<MenuElement>
     
-    response:           any
-    currenttopics:      any
-    currentnewsdisplay: any
+    response:               any
+    currenttopics:          any
+    currentnewsdisplay:     any
 
     // Constructor of class
     constructor(props: any) {
@@ -61,8 +61,9 @@ export default class ShopPage extends Component {
                     this.response.body[i].category, 
                     this.response.body[i].name, 
                     this.response.body[i].content, 
+                    this.response.body[i].count,
                     this.response.body[i].price, 
-                    this.response.body[i].refTo
+                    String(this.response.body[i].id)
                 )
             )
         }
@@ -73,8 +74,11 @@ export default class ShopPage extends Component {
         let categories = new Array<string>();
         this.topics.push(
             new MenuElement(
+                // Topic count
                 this.response.body.length, 
+                // Topic name
                 "All", 
+                // Topic event
                 () => this.setState(
                     this.currentnewsdisplay = this.selectShopElements("")
                 )
@@ -118,27 +122,45 @@ export default class ShopPage extends Component {
 
     render() {
 
-        if (this.response !== null && this.isFirstUpload) {
-            this.parsejsonToProductList()
-            this.parseProductListToMenuElements();
-            this.currentnewsdisplay = this.selectShopElements(this.currenttopic);
-            this.isFirstUpload = false;
+        if (this.response !== null ) {
+            if (this.response.status !== 500 && this.isFirstUpload) {
+                this.parsejsonToProductList()
+                this.parseProductListToMenuElements();
+                this.currentnewsdisplay = this.selectShopElements(this.currenttopic);
+                this.isFirstUpload = false;
+
+                this.currenttopics = GetShopMenuElements(this.topics);
+
+                return(
+                    <div className="shop">
+                        <p className="font-medium font-center font-bold">Наш магазин</p>
+                        <div className="shop-inside">
+                            <div className="shop-menu">
+                                {this.currenttopics}
+                            </div>
+                            <div className="shop-content">
+                                {this.currentnewsdisplay}
+                            </div>
+                        </div>
+                    </div>
+                )
+            }
+            else {
+                return (
+                    <div className="product-page">
+                        <p className="font-medium font-center font-bold font-red"> Что-то пошло не так. </p>
+                    </div>
+                )
+            }
+        }
+
+        else {
+            return (
+                <div className="product-page">
+                    <p className="font-medium font-center font-bold font-red"> Что-то пошло не так. </p>
+                </div>
+            )
         }
         
-        this.currenttopics = GetShopMenuElements(this.topics);
-
-        return(
-            <div className="shop">
-                <p className="font-medium font-center font-bold">Наш магазин</p>
-                <div className="shop-inside">
-                    <div className="shop-menu">
-                        {this.currenttopics}
-                    </div>
-                    <div className="shop-content">
-                        {this.currentnewsdisplay}
-                    </div>
-                </div>
-            </div>
-        )
     }
 }
