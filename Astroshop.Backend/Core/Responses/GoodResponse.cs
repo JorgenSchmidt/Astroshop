@@ -3,15 +3,12 @@ using System.Collections.Generic;
 
 namespace Astroshop.Core.Responses
 {
-    public class BasicResponse<T> where T : class
+    public class GoodResponse<T> : Response where T : class 
     {
         /// <summary>
         /// Body of response
         /// </summary>
         public List<T> Body { get; set; }
-        /// <summary>
-        /// Status of response
-        /// </summary>
-        public ResponseStatus Status { get; set; }
+        public override ResponseStatus Status { get; set; }
     }
 }

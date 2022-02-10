@@ -27,38 +27,60 @@ namespace Astroshop.Data.PostgreeSQL.Services
             },
         };
 
-        public async Task<BasicResponse<Product>> GetAll()
+        public async Task<Response> GetAll()
         {
-            return new BasicResponse<Product>()
+            try
             {
-                Body = ExampleOfData,
-                Status = ResponseStatus.Ok
-            };
+                return new GoodResponse<Product>
+                {
+                    Body = ExampleOfData,
+                    Status = ResponseStatus.Ok
+                };
+            }
+            catch (Exception ex)
+            {
+                return new ErrorResponse
+                {
+                    Body = ex.Message,
+                    Status = ResponseStatus.InternalErrorServer
+                };
+            }
         }
 
-        public async Task<BasicResponse<Product>> GetById(int id)
+        public async Task<Response> GetById(int id)
         {
-            return new BasicResponse<Product>()
+            try
             {
-                Body = ExampleOfData
-                    .Where(targ => targ.ID == id)
-                    .Select(targ => targ)
-                    .ToList(),
-                Status = ResponseStatus.Ok
-            };
+                return new GoodResponse<Product>()
+                {
+                    Body = ExampleOfData
+                        .Where(targ => targ.ID == id)
+                        .Select(targ => targ)
+                        .ToList(),
+                    Status = ResponseStatus.Ok
+                };
+            }
+            catch (Exception ex)
+            {
+                return new ErrorResponse
+                {
+                    Body = ex.Message,
+                    Status = ResponseStatus.InternalErrorServer
+                };
+            }
         }
 
-        public Task<int> AddProduct(object input)
+        public Task<Response> AddProduct(object input)
         {
             throw new NotImplementedException();
         }
 
-        public Task<int> DeleteProduct(object input)
+        public Task<Response> DeleteProduct(object input)
         {
             throw new NotImplementedException();
         }
 
-        public Task<int> UpdateProduct(object input)
+        public Task<Response> UpdateProduct(object input)
         {
             throw new NotImplementedException();
         }

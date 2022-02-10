@@ -2,15 +2,12 @@
 
 namespace Astroshop.Core.Responses
 {
-    public class ErrorResponse
+    public class ErrorResponse : Response
     {
         /// <summary>
         /// Body of response
         /// </summary>
         public string Body { get; set; }
-        /// <summary>
-        /// Status of response
-        /// </summary>
-        public ResponseStatus Status { get; set; }
+        public override ResponseStatus Status { get; set; }
     }
 }

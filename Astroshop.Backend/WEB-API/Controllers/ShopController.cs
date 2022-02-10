@@ -23,35 +23,13 @@ namespace WEB_API.Controllers
         [HttpGet("get-all")]
         public async Task<object> GetAll()
         {
-            try
-            {
-                return await _service.GetAll();
-            }
-            catch (Exception ex)
-            {
-                return new ErrorResponse
-                {
-                    Body = ex.Message,
-                    Status = ResponseStatus.InternalErrorServer
-                };
-            }
+            return await _service.GetAll();
         }
 
         [HttpGet("get/{id}")]
         public async Task<object> Get(int id)
         {
-            try
-            {
-                return await _service.GetById(id);
-            }
-            catch (Exception ex)
-            {
-                return new ErrorResponse
-                {
-                    Body = ex.Message,
-                    Status = ResponseStatus.InternalErrorServer
-                };
-            }
+            return await _service.GetById(id);
         }
     }
 }
