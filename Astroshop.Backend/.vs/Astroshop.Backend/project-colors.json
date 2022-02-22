@@ -15,6 +15,11 @@
       "ProjectGuid": "8fcb20b3-1395-408c-9cf0-eaa2ae33e23e",
       "DisplayName": "Astroshop.WEB-API",
       "ColorIndex": 2
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Прочие файлы",
+      "ColorIndex": -1
     }
   },
   "NextColorIndex": 3

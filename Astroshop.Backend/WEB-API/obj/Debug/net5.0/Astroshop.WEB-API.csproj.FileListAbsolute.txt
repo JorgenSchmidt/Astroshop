@@ -25,3 +25,7 @@ D:\ProgramData\Projects\Astroshop\Astroshop.Backend\WEB-API\obj\Debug\net5.0\Ast
 D:\ProgramData\Projects\Astroshop\Astroshop.Backend\WEB-API\obj\Debug\net5.0\ref\Astroshop.WEB-API.dll
 D:\ProgramData\Projects\Astroshop\Astroshop.Backend\WEB-API\obj\Debug\net5.0\Astroshop.WEB-API.pdb
 D:\ProgramData\Projects\Astroshop\Astroshop.Backend\WEB-API\obj\Debug\net5.0\Astroshop.WEB-API.genruntimeconfig.cache
+D:\ProgramData\Projects\Astroshop\Astroshop.Backend\WEB-API\bin\Debug\net5.0\NLog.dll
+D:\ProgramData\Projects\Astroshop\Astroshop.Backend\WEB-API\bin\Debug\net5.0\NLog.Extensions.Logging.dll
+D:\ProgramData\Projects\Astroshop\Astroshop.Backend\WEB-API\bin\Debug\net5.0\NLog.Web.AspNetCore.dll
+D:\ProgramData\Projects\Astroshop\Astroshop.Backend\WEB-API\bin\Debug\net5.0\nlog.config

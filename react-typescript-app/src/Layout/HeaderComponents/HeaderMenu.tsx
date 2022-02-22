@@ -9,19 +9,19 @@ class HeaderMenu extends Component {
             <div className="header-menu-main">
                 <HeaderMenuButton
                     content="Главная"
-                    hrefname="/"
+                    refto="/"
                 />
                 <HeaderMenuButton
                     content="Об астрономии"
-                    hrefname="/astronomy"
+                    refto="/astronomy"
                 />
                 <HeaderMenuButton
                     content="Об астрофизике"
-                    hrefname="/astrophysics"
+                    refto="/astrophysics"
                 />
                 <HeaderMenuButton
                     content="Интернет-магазин"
-                    hrefname="/shop"
+                    refto="/shop"
                 />
             </div>
         )

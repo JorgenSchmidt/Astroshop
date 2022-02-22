@@ -123,11 +123,13 @@ export default class ShopPage extends Component {
     render() {
 
         if (this.response !== null ) {
-            if (this.response.status !== 500 && this.isFirstUpload) {
-                this.parsejsonToProductList()
-                this.parseProductListToMenuElements();
-                this.currentnewsdisplay = this.selectShopElements(this.currenttopic);
-                this.isFirstUpload = false;
+            if (this.response.status !== 500 ) {
+                if (this.isFirstUpload) {
+                    this.parsejsonToProductList()
+                    this.parseProductListToMenuElements();
+                    this.currentnewsdisplay = this.selectShopElements(this.currenttopic);
+                    this.isFirstUpload = false;
+                }
 
                 this.currenttopics = GetShopMenuElements(this.topics);
 
@@ -157,7 +159,7 @@ export default class ShopPage extends Component {
         else {
             return (
                 <div className="product-page">
-                    <p className="font-medium font-center font-bold font-red"> Что-то пошло не так. </p>
+                    <p className="font-medium font-center font-bold font-red"> Ошибка соединения с сервером. </p>
                 </div>
             )
         }

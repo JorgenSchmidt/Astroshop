@@ -1,5 +1,4 @@
-﻿using Astroshop.Core.Entities;
-using Astroshop.Core.Enums;
+﻿using Astroshop.Core.Enums;
 
 namespace Astroshop.Core.Responses.SpecialResponses
 {
@@ -8,7 +7,6 @@ namespace Astroshop.Core.Responses.SpecialResponses
         /// <summary>
         /// Body of response
         /// </summary>
-        public User Body { get; set; }
         public override ResponseStatus Status { get; set; }
     }
 }

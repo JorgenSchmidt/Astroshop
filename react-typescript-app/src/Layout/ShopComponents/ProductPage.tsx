@@ -1,7 +1,9 @@
 import { Component } from "react";
 import axios from "axios";
 import "./ShopStyles.css"
+
 import Product from "./ProductElement";
+import {LinkButton} from "../ButtonComponents/LinkButton"
 
 export default class ProductPage extends Component {
 
@@ -59,6 +61,9 @@ export default class ProductPage extends Component {
                         <p className="font-mediumsmall font-justify">
                             {currentProduct.Content}
                         </p>
+                        <div className="font-center">
+                            <LinkButton content="Назад" hrefto="/shop"/>
+                        </div>
                     </div>
                 )
             }
@@ -66,6 +71,9 @@ export default class ProductPage extends Component {
                 return (
                     <div className="product-page">
                         <p className="font-medium font-center font-bold font-red"> Что-то пошло не так. </p>
+                        <div className="font-center">
+                            <LinkButton content="Назад" hrefto="/shop"/>
+                        </div>
                     </div>
                 )
             }
@@ -75,6 +83,9 @@ export default class ProductPage extends Component {
             return (
                 <div className="product-page">
                     <p className="font-medium font-center font-bold font-red"> Возможно, товара не существует. </p>
+                    <div className="font-center">
+                        <LinkButton content="Назад" hrefto="/shop"/>
+                    </div>
                 </div>
             )
         }

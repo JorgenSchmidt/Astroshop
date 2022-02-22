@@ -1,14 +1,17 @@
+import { NavLink } from 'react-router-dom';
 import './ButtonStyles.css';
 
 interface IHeaderMainButton {
-    content: string,
-    eventname: () => void
+    content:    string,
+    refto:      string,
 }
 
-export const HeaderMainButton = ({content, eventname} : IHeaderMainButton ) => {
+export const HeaderMainButton = ({content, refto} : IHeaderMainButton ) => {
     return (
-        <div className="header-main-button" onClick={eventname}>
-            <p className="font-nomargin font-small"> {content} </p>
-        </div>  
+        <NavLink to={refto}>
+            <div className="header-main-button">
+                <p className="font-nomargin font-small"> {content} </p>
+            </div>  
+        </NavLink>
     )
 }

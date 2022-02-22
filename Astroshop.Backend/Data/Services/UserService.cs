@@ -1,22 +1,22 @@
 ﻿using Astroshop.Core.Interfaces;
-using Astroshop.Core.Responses.SpecialResponses;
+using Astroshop.Core.Responses;
 using System.Threading.Tasks;
 
 namespace Astroshop.Data.PostgreeSQL.Services
 {
     public class UserService : IUser
     {
-        public Task<AccountResponse> LoginUser(object input)
+        public Task<Response> LoginUser(object input)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<AccountResponse> RecoverPassword(object input)
+        public Task<Response> RecoverPassword(object input)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<AccountResponse> RegisterUser(object input)
+        public Task<Response> RegisterUser(object input)
         {
             throw new System.NotImplementedException();
         }

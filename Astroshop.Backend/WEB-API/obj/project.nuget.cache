@@ -1,8 +1,19 @@
 {
   "version": 2,
-  "dgSpecHash": "3JeqonBFpF3k2TMTsvb7QYUg1rolMkl9f72cxldf7CLXvYqLWMDvEC6PTV/BV6u8DHuQ7m4OEykxsK3U71AY8g==",
+  "dgSpecHash": "uiVcfq8HDNHZgs55eUfWWKjbBosRdpWZ1Lvbr5tjGUYc5PK02dy0mM/ERU1khHDZtDYPRlE+4ShLOPSIHYccZQ==",
   "success": true,
   "projectFilePath": "D:\\ProgramData\\Projects\\Astroshop\\Astroshop.Backend\\WEB-API\\Astroshop.WEB-API.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Joe\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\Joe\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.0\\microsoft.extensions.dependencyinjection.5.0.0.nupkg.sha512",
+    "C:\\Users\\Joe\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\Joe\\.nuget\\packages\\microsoft.extensions.logging\\5.0.0\\microsoft.extensions.logging.5.0.0.nupkg.sha512",
+    "C:\\Users\\Joe\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\Joe\\.nuget\\packages\\microsoft.extensions.options\\5.0.0\\microsoft.extensions.options.5.0.0.nupkg.sha512",
+    "C:\\Users\\Joe\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
+    "C:\\Users\\Joe\\.nuget\\packages\\nlog\\4.7.13\\nlog.4.7.13.nupkg.sha512",
+    "C:\\Users\\Joe\\.nuget\\packages\\nlog.extensions.logging\\1.7.4\\nlog.extensions.logging.1.7.4.nupkg.sha512",
+    "C:\\Users\\Joe\\.nuget\\packages\\nlog.web.aspnetcore\\4.14.0\\nlog.web.aspnetcore.4.14.0.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -15,6 +15,7 @@ namespace WEB_API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IProduct, ProductService>();
+            services.AddScoped<IUser, UserService>();
 
             services.AddCors(opt => opt.AddPolicy("Policy",
                builder => builder.AllowAnyHeader()

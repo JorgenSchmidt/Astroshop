@@ -1,8 +1,9 @@
 ﻿using Astroshop.Core.Enums;
+using System.Threading.Tasks;
 
 namespace Astroshop.Core.Responses
 {
-    public class ErrorResponse : Response
+    public class BadResponse : Response
     {
         /// <summary>
         /// Body of response

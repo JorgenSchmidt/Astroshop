@@ -23,9 +23,11 @@ a.active {
 }
 
 .block-canActive {
+  margin: 0px;
   transform: scale(0);
 }
 .block-canActive.active {
+  margin: 0px;
   transform: scale(1);
 }
 
@@ -39,6 +41,10 @@ a.active {
 
 .font-smalllargemargin {
   margin: 2%;
+}
+
+.font-topsmallmarin {
+  margin-top: 10%;
 }
 
 .font-white {
