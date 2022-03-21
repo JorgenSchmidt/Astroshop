@@ -13,3 +13,5 @@ D:\ProgramData\Projects\Astroshop\Astroshop.Backend\Data\obj\Debug\net5.0\Astros
 D:\ProgramData\Projects\Astroshop\Astroshop.Backend\Data\obj\Debug\net5.0\Astroshop.Data.PostgreeSQL.dll
 D:\ProgramData\Projects\Astroshop\Astroshop.Backend\Data\obj\Debug\net5.0\ref\Astroshop.Data.PostgreeSQL.dll
 D:\ProgramData\Projects\Astroshop\Astroshop.Backend\Data\obj\Debug\net5.0\Astroshop.Data.PostgreeSQL.pdb
+D:\ProgramData\Projects\Astroshop\Astroshop.Backend\Data\bin\Debug\net5.0\Astroshop.Services.dll
+D:\ProgramData\Projects\Astroshop\Astroshop.Backend\Data\bin\Debug\net5.0\Astroshop.Services.pdb

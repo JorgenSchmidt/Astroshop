@@ -1,14 +1,14 @@
 ﻿using Astroshop.Core.Enums;
-using System.Threading.Tasks;
 
-namespace Astroshop.Core.Responses
+namespace Astroshop.Core.Responses.SpecialResponses
 {
-    public class BadResponse : Response
+    public class SingleResponse<T> : Response
     {
         /// <summary>
         /// Body of response
         /// </summary>
-        public string Body { get; set; }
+        
+        public T Body { get; set; }
         public override ResponseStatus Status { get; set; }
     }
 }

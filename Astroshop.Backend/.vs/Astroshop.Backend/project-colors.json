@@ -20,7 +20,27 @@
       "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
       "DisplayName": "Прочие файлы",
       "ColorIndex": -1
+    },
+    "0cba9c45-8462-4c6e-ad19-286f6cba478a": {
+      "ProjectGuid": "0cba9c45-8462-4c6e-ad19-286f6cba478a",
+      "DisplayName": "Astroshop.Services",
+      "ColorIndex": 3
+    },
+    "2b60c83b-c6ef-4603-9f4d-ee108c2bcc82": {
+      "ProjectGuid": "2b60c83b-c6ef-4603-9f4d-ee108c2bcc82",
+      "DisplayName": "Astroshop.Services.Test",
+      "ColorIndex": 4
+    },
+    "f9627189-f452-424f-bbcb-fd8cbcbd9cb4": {
+      "ProjectGuid": "f9627189-f452-424f-bbcb-fd8cbcbd9cb4",
+      "DisplayName": "Astroshop.Services.Test",
+      "ColorIndex": 5
+    },
+    "e4e874da-a859-4db7-b660-9af662c8f291": {
+      "ProjectGuid": "e4e874da-a859-4db7-b660-9af662c8f291",
+      "DisplayName": "Astroshop.Services.Tests",
+      "ColorIndex": 6
     }
   },
-  "NextColorIndex": 3
+  "NextColorIndex": 7
 }

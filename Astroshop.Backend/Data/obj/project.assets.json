@@ -128,6 +128,19 @@
         "runtime": {
           "bin/placeholder/Astroshop.Core.dll": {}
         }
+      },
+      "Astroshop.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Astroshop.Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Astroshop.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Astroshop.Services.dll": {}
+        }
       }
     }
   },
@@ -368,11 +381,17 @@
       "type": "project",
       "path": "../Core/Astroshop.Core.csproj",
       "msbuildProject": "../Core/Astroshop.Core.csproj"
+    },
+    "Astroshop.Services/1.0.0": {
+      "type": "project",
+      "path": "../Astroshop.Services/Astroshop.Services.csproj",
+      "msbuildProject": "../Astroshop.Services/Astroshop.Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
       "Astroshop.Core >= 1.0.0",
+      "Astroshop.Services >= 1.0.0",
       "NLog.Extensions.Logging >= 1.7.4",
       "NLog.Web.AspNetCore >= 4.14.0"
     ]
@@ -404,6 +423,9 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
+            "D:\\ProgramData\\Projects\\Astroshop\\Astroshop.Backend\\Astroshop.Services\\Astroshop.Services.csproj": {
+              "projectPath": "D:\\ProgramData\\Projects\\Astroshop\\Astroshop.Backend\\Astroshop.Services\\Astroshop.Services.csproj"
+            },
             "D:\\ProgramData\\Projects\\Astroshop\\Astroshop.Backend\\Core\\Astroshop.Core.csproj": {
               "projectPath": "D:\\ProgramData\\Projects\\Astroshop\\Astroshop.Backend\\Core\\Astroshop.Core.csproj"
             }

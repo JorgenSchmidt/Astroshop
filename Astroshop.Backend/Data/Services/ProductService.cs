@@ -40,7 +40,7 @@ namespace Astroshop.Data.PostgreeSQL.Services
         {
             try
             {
-                _logger.LogInformation("GetAll method: Response has been sent");
+                _logger.LogInformation("(S) GetAll method: Response has been sent");
                 return new GoodResponse<Product>
                 {
                     Body = ExampleOfData,
@@ -49,10 +49,10 @@ namespace Astroshop.Data.PostgreeSQL.Services
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex.ToString());
-                return new BadResponse
+                _logger.LogError("(E) GetAll method: " + ex.ToString());
+                return new StringResponse
                 {
-                    Body = "Internal server error",
+                    Body = await Task.Run(() => "Internal server error"),
                     Status = ResponseStatus.InternalErrorServer
                 };
             }
@@ -62,7 +62,7 @@ namespace Astroshop.Data.PostgreeSQL.Services
         {
             try
             {
-                _logger.LogInformation("Get method: Response has been sent");
+                _logger.LogInformation("(S) Get method: Response has been sent");
                 return new GoodResponse<Product>
                 {
                     Body = ExampleOfData
@@ -74,10 +74,10 @@ namespace Astroshop.Data.PostgreeSQL.Services
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex.ToString() + " id: " + id);
-                return new BadResponse
+                _logger.LogError("(E) Get method: " + ex.ToString() + " id: " + id);
+                return new StringResponse
                 {
-                    Body = "Internal server error",
+                    Body = await Task.Run(() => "Internal server error"),
                     Status = ResponseStatus.InternalErrorServer
                 };
             }

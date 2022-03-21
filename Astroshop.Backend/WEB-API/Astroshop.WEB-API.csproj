@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Astroshop.Services\Astroshop.Services.csproj" />
     <ProjectReference Include="..\Core\Astroshop.Core.csproj" />
     <ProjectReference Include="..\Data\Astroshop.Data.PostgreeSQL.csproj" />
   </ItemGroup>

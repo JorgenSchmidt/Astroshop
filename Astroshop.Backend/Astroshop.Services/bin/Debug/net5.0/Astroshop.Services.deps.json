@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "Astroshop.Services/1.0.0": {
+        "dependencies": {
+          "Astroshop.Core": "1.0.0"
+        },
+        "runtime": {
+          "Astroshop.Services.dll": {}
+        }
+      },
+      "Astroshop.Core/1.0.0": {
+        "runtime": {
+          "Astroshop.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Astroshop.Services/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Astroshop.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
