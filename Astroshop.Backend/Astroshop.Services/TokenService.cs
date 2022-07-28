@@ -26,7 +26,8 @@ namespace Astroshop.Services
                 +   input.Email + devider
                 +   input.ID + devider
                 +   input.Password + devider
-                +   input.IsBanned.ToString()
+                +   input.IsBanned.ToString() + devider
+                +   input.LegalLevel
 
                 , input.Password
             ));
@@ -70,6 +71,7 @@ namespace Astroshop.Services
                 ID = Convert.ToInt32(fields[6]),
                 Password = fields[7],
                 IsBanned = Convert.ToBoolean(fields[8]),
+                LegalLevel = fields[9].ToString(),
             };
             return user;
         }

@@ -11,6 +11,29 @@
     margin-bottom: 3%;
 }
 
+.header-main-accountPage {
+    border: 3px solid #fc0;
+    border-radius: 14px;
+    width: 30%;
+    padding: 12px;
+    margin-left: 72%;
+    transform: translateX(-24%);
+
+}
+
+.header-main-accountInfo {
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-top: 0.5%;
+    margin-bottom: 0.7%;
+}
+
+.header-main-accountInfoElement {
+    text-align: left;
+    width: 103%;
+    color: #ccc
+}
+
 .header-menu-main {
     text-align: center;
 }

@@ -16,6 +16,12 @@ namespace WEB_API.Controllers
             _service = service;
         }
 
+        [HttpPost("translate")]
+        public async Task<object> TranslateToken (object input)
+        {
+            return await _service.TranslateUserToken(input);
+        }
+
         [HttpPost("register")]
         public async Task<object> Register(object input) 
         {

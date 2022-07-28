@@ -3,6 +3,8 @@ import "./AccountStyles.css";
 
 import {EventButton} from "../ButtonComponents/EventButton"
 import accountfilter from "./AccountFilter";
+import { ToRegisterReducer } from "../GlobalStorage/AccountStorage/AccountReducers";
+import UserObject from "../GlobalStorage/AccountStorage/AccountStorage";
 
 class RegisterPage extends Component {
 
@@ -34,7 +36,7 @@ class RegisterPage extends Component {
 
         super(props)
 
-        //param             value
+        //param                     value
         this.name                   = ""
         this.nameIsCorrect          = true
 
@@ -101,28 +103,46 @@ class RegisterPage extends Component {
     }
 
     async register () {
-        this.setState(
-            () => this.nameIsCorrect = !accountfilter(this.name)
-        )
-        this.setState(
-            () => this.secnameIsCorrect = !accountfilter(this.secname)
-        )
-        this.setState(
-            () => this.surnameIsCorrect = !accountfilter(this.surname)
-        )
-        this.setState(
-            () => this.emailIsCorrect = !accountfilter(this.email)
-        )
-        this.setState(
-            () => this.passIsCorrect = !accountfilter(this.password)
-        )
-        this.setState(
-            () => this.passAgainIsCorrect = !accountfilter(this.passAgain)
-        )
+        if (this.checkparams()) {
+            await ToRegisterReducer(
+                new UserObject (
+                    this.name,
+                    this.secname,
+                    this.surname,
+                    this.citizenship,
+                    this.email,
+                    this.password,
+                    "user",
+                    this.phone,
+                    0
+                )
+            );
+        }
         return await 0;
     }
 
-    checkparams = () => {
+    async correctparams () {
+        await this.setState(
+            () => this.nameIsCorrect = !accountfilter(this.name)
+        )
+        await this.setState(
+            () => this.secnameIsCorrect = !accountfilter(this.secname)
+        )
+        await this.setState(
+            () => this.surnameIsCorrect = !accountfilter(this.surname)
+        )
+        await this.setState(
+            () => this.emailIsCorrect = !accountfilter(this.email)
+        )
+        await this.setState(
+            () => this.passIsCorrect = !accountfilter(this.password)
+        )
+        await this.setState(
+            () => this.passAgainIsCorrect = !accountfilter(this.passAgain)
+        )
+    }
+
+    checkparams ()  {
         return  this.nameIsCorrect && 
                 this.secnameIsCorrect && 
                 this.surnameIsCorrect && 
@@ -222,9 +242,9 @@ class RegisterPage extends Component {
                 <EventButton
                     content = "Зарегистрироваться"
                     eventname = {async () => {
-                        await this.register()
+                        await this.correctparams()
                         if (this.checkparams()) {
-                            await console.log("Req");
+                            await this.register()
                         }
                     }}
                 />

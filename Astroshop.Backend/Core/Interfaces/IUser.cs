@@ -6,6 +6,11 @@ namespace Astroshop.Core.Interfaces
     public interface IUser
     {
         /// <summary>
+        /// To translate the usertoken
+        /// </summary>
+        /// <returns>Status of responce + translated token </returns>
+        public Task<Response> TranslateUserToken(object input);
+        /// <summary>
         /// To register the user
         /// </summary>
         /// <returns>Status of responce + object of User for register </returns>

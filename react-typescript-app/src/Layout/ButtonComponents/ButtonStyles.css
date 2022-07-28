@@ -1,3 +1,40 @@
+.exitAccountButton {
+    display: inline-block;
+
+    margin: 1%;
+    margin-top: 3%;
+    padding-top: 1.5%;
+    padding-bottom: 1.9%;
+    padding-left: 1.7%;
+    padding-right: 1.7%;
+
+    color: #eee;
+    background-color: #111;
+    border: 2px solid #fc0;
+    border-radius: 12px;
+
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor:pointer;
+}
+
+.exitAccountButton:hover {
+    display: inline-block;
+
+    color: #111;
+    background-color: #ddd;
+    border: 2px solid #fb0;
+    border-radius: 12px;
+
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor:pointer;
+}
+
 .rulebutton {
     display: inline-block;
 

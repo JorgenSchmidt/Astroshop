@@ -3,6 +3,7 @@ using Astroshop.Core.Enums;
 using Astroshop.Core.Interfaces;
 using Astroshop.Core.Responses;
 using Astroshop.Services;
+using Astroshop.Core.Responses.SpecialResponses;
 
 using Microsoft.Extensions.Logging;
 using System;
@@ -19,6 +20,29 @@ namespace Astroshop.Data.PostgreeSQL.Services
         public UserService(ILogger<UserService> logger)
         {
             _logger = logger;
+        }
+
+        public async Task<Response> TranslateUserToken(object input)
+        {
+            try
+            {
+                Request token = JsonSerializer.Deserialize<Request>(input.ToString());
+                _logger.LogInformation("(S) TranslateUserToken: Response has been sent");
+                return new SingleResponse<User>
+                {
+                    Body = await TokenService.TranslateToken(token.Body.ToString()),
+                    Status = ResponseStatus.Ok
+                };
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("(E) TranslateUserToken method: " + ex.ToString());
+                return new StringResponse
+                {
+                    Body = await Task.Run(() => "Internal server error"),
+                    Status = ResponseStatus.InternalErrorServer
+                };
+            }
         }
 
         public async Task<Response> RegisterUser(object input)

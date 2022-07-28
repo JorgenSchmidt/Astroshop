@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Astroshop.Core.Enums;
+using System.ComponentModel.DataAnnotations;
 
 namespace Astroshop.Core.Entities
 {
@@ -13,6 +14,7 @@ namespace Astroshop.Core.Entities
         public string Phone { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+        public string LegalLevel { get; set; }
         public bool IsBanned { get; set; }
     }
 }

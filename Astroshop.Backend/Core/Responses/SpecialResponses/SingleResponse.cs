@@ -2,6 +2,10 @@
 
 namespace Astroshop.Core.Responses.SpecialResponses
 {
+    /// <summary>
+    /// Для отправки данных с полем Body не представляющим из себя список объектов
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class SingleResponse<T> : Response
     {
         /// <summary>
