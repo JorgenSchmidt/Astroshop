@@ -1,5 +1,8 @@
+import { parseCookie } from "../../CookieService/CookiesService"
+
 export default class UserObject {
     firstName:              string
+    nickName:               string
     secondName:             string
     surName:                string
     citizenship:            string
@@ -11,6 +14,7 @@ export default class UserObject {
 
     constructor (
         firstName:              string,
+        nickName:               string,
         secondName:             string,
         surname:                string,
         citizenship:            string,
@@ -22,6 +26,7 @@ export default class UserObject {
     ) 
     {
         this.firstName = firstName
+        this.nickName = nickName
         this.secondName = secondName
         this.surName = surname
         this.citizenship = citizenship
@@ -34,26 +39,28 @@ export default class UserObject {
 }
 
 export let AccountStorage = new UserObject (
-    "null",
-    "null",
-    "null",
-    "null",
-    "null",
-    "null",
-    "null",
-    "null",
+    parseCookie("u_name"),
+    parseCookie("u_nick"),
+    parseCookie("u_secondname"),
+    parseCookie("u_surname"),
+    parseCookie("u_citizenship"),
+    parseCookie("u_mail"),
+    "",
+    parseCookie("u_legallevel"),
+    parseCookie("u_phone"),
     0
 )
 
 export const DefaultStorage = new UserObject (
-    "null",
-    "null",
-    "null",
-    "null",
-    "null",
-    "null",
-    "null",
-    "null",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
     0
 )
 
@@ -61,9 +68,6 @@ export function CheckByDefaultStateOfStorage() {
     return AccountStorage.firstName === DefaultStorage.firstName
     &&AccountStorage.secondName === DefaultStorage.secondName
     &&AccountStorage.surName === DefaultStorage.surName
-    &&AccountStorage.id === DefaultStorage.id
-    &&AccountStorage.citizenship === DefaultStorage.citizenship
-    &&AccountStorage.phone === DefaultStorage.phone
     &&AccountStorage.legalLevel === DefaultStorage.legalLevel
-    &&AccountStorage.email === DefaultStorage.email
+    &&AccountStorage.nickName === DefaultStorage.nickName
 }

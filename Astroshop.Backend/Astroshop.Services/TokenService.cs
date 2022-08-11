@@ -27,7 +27,8 @@ namespace Astroshop.Services
                 +   input.ID + devider
                 +   input.Password + devider
                 +   input.IsBanned.ToString() + devider
-                +   input.LegalLevel
+                +   input.LegalLevel + devider
+                +   input.NickName
 
                 , input.Password
             ));
@@ -69,13 +70,14 @@ namespace Astroshop.Services
                 Phone = fields[4],
                 Email = fields[5],
                 ID = Convert.ToInt32(fields[6]),
-                Password = fields[7],
+                Password = "",
                 IsBanned = Convert.ToBoolean(fields[8]),
                 LegalLevel = fields[9].ToString(),
+                NickName = fields[10],
             };
             return user;
         }
-        public static string Decript(string input)
+        private static string Decript(string input)
         {
             string translatedstring = "";
             // Делим ввод на основную часть (данные о пользователе), main

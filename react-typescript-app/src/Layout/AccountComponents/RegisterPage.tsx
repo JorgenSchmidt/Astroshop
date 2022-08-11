@@ -11,6 +11,9 @@ class RegisterPage extends Component {
     name:                   string
     nameIsCorrect:          boolean
 
+    nick:                   string
+    nickIsCorrect:          boolean
+
     secname:                string
     secnameIsCorrect:       boolean
 
@@ -40,6 +43,9 @@ class RegisterPage extends Component {
         this.name                   = ""
         this.nameIsCorrect          = true
 
+        this.nick                   = ""
+        this.nickIsCorrect          = true
+
         this.secname                = ""
         this.secnameIsCorrect       = true
 
@@ -63,6 +69,7 @@ class RegisterPage extends Component {
 
     }
 
+    // for immitation some WPF features on site
     onChangeParametersHandler = (field: string, value: string) => {
         switch (field) 
         {
@@ -70,6 +77,10 @@ class RegisterPage extends Component {
                 this.name = value
             break;
 
+            case "nick":
+                this.nick = value
+            break;
+            
             case "secname":
                 this.secname = value
             break;
@@ -107,6 +118,7 @@ class RegisterPage extends Component {
             await ToRegisterReducer(
                 new UserObject (
                     this.name,
+                    this.nick,
                     this.secname,
                     this.surname,
                     this.citizenship,
@@ -124,6 +136,9 @@ class RegisterPage extends Component {
     async correctparams () {
         await this.setState(
             () => this.nameIsCorrect = !accountfilter(this.name)
+        )
+        await this.setState(
+            () => this.nickIsCorrect = !accountfilter(this.nick)
         )
         await this.setState(
             () => this.secnameIsCorrect = !accountfilter(this.secname)
@@ -148,14 +163,15 @@ class RegisterPage extends Component {
                 this.surnameIsCorrect && 
                 this.emailIsCorrect && 
                 this.passIsCorrect &&
-                this.passAgainIsCorrect 
+                this.passAgainIsCorrect &&
+                this.nickIsCorrect
     }
 
     render() {
         return (
             <div className="account-register font-center">
-                <p className="font-mediumlarge font-bold font-smallmargin">Регистрация</p>
-                <div className="account-box">
+                <p className="font-mediumlarge font-bold font-smallmargin">Регистрация</p>          
+                <div className="account-box">                
                     <div className="account-element">
                         
                         <p className="font-mediumsmall font-nomargin font-topsmallmarin">Имя: </p>
@@ -236,6 +252,16 @@ class RegisterPage extends Component {
                         <input
                             type="text"
                             onChange={event => {this.onChangeParametersHandler("phone", event.target.value)}}
+                        />
+                    </div>
+                    <div className="account-element">
+                        <p className="font-mediumsmall font-nomargin font-topsmallmarin">Никнейм: </p>
+                        <div className={this.nickIsCorrect ? "block-canActive" : "block-canActive active"}>
+                            <p className="font-nomargin font-small font-red"> Поле не может быть пустым.</p>
+                        </div>
+                        <input
+                            type="text"
+                            onChange={event => {this.onChangeParametersHandler("nick", event.target.value)}}
                         />
                     </div>
                 </div>

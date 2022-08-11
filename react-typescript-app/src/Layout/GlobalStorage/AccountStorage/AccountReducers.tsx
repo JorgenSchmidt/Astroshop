@@ -1,4 +1,5 @@
 import axios from "axios";
+import { RecordUserInfoToCookie } from "../../CookieService/RecordUserInfo";
 import UserObject, { AccountStorage, DefaultStorage } from "./AccountStorage"
 
 async function CopyUserObjectToStorage(GettedUserInfo: any) {
@@ -9,6 +10,10 @@ async function CopyUserObjectToStorage(GettedUserInfo: any) {
         
             if (!filter(GettedUserInfo.firstName)) {
                 AccountStorage.firstName = GettedUserInfo.firstName
+            }
+
+            if (!filter(GettedUserInfo.firstName)) {
+                AccountStorage.nickName = GettedUserInfo.nickName
             }
         
             if(!filter(GettedUserInfo.secondName)) {
@@ -69,6 +74,7 @@ export async function ToRegisterReducer (GettedUserInfo: UserObject) {
     {
         "ID": 1,
         "FirstName": GettedUserInfo.firstName,
+        "NickName": GettedUserInfo.nickName,
         "SecondName": GettedUserInfo.secondName,
         "SurName": GettedUserInfo.surName,
         "Citizenship": GettedUserInfo.citizenship,
@@ -88,7 +94,6 @@ export async function ToRegisterReducer (GettedUserInfo: UserObject) {
             console.log(error)
         }
     )
-    await console.log(token)
 
     // Send token to register part
     await axios.post (
@@ -106,10 +111,12 @@ export async function ToRegisterReducer (GettedUserInfo: UserObject) {
             console.log(error)
         }
     )
-    await console.log(userinf)
-    await console.log(AccountStorage)
+    
+    console.log(userinf);
     await CopyUserObjectToStorage(userinf)
-    await console.log(AccountStorage)
+    await RecordUserInfoToCookie(AccountStorage);
+    console.log(document.cookie)
+    document.location = "/"
 }
 
 export async function ToLoginReducer (token: string) 

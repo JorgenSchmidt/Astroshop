@@ -7,6 +7,7 @@ namespace Astroshop.Core.Entities
     {
         [Key]
         public int ID { get; set; }
+        public string NickName { get; set; }
         public string FirstName { get; set; }
         public string SurName { get; set; }
         public string SecondName { get; set; }

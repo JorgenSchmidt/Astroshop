@@ -2,12 +2,13 @@ import "./HeaderStyles.css"
 
 interface IAccountInfoElement {
     name:                   string
+    nick:                   string
     secname:                string
     surname:                string
     legalLevel:             string
 }
 
-export const AccountInfoElement = ({name, secname, surname, legalLevel} : IAccountInfoElement) => {
+export const AccountInfoElement = ({name, nick, secname, surname, legalLevel} : IAccountInfoElement) => {
     return (
         <div className="header-main-accountInfo">
             <div className="header-main-accountInfoElement">

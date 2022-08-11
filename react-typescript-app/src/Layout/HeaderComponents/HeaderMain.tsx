@@ -2,14 +2,16 @@ import { Component } from "react";
 import "./HeaderStyles.css"
 
 import { HeaderMainButton } from "../ButtonComponents/HeaderMainButton";
-import { AccountStorage, CheckByDefaultStateOfStorage} from "../GlobalStorage/AccountStorage/AccountStorage";
+import { AccountStorage, CheckByDefaultStateOfStorage, DefaultStorage} from "../GlobalStorage/AccountStorage/AccountStorage";
 import { AccountInfoElement } from "./AccountInfoElement";
 import { ToExitAccount } from "../GlobalStorage/AccountStorage/AccountReducers";
 import { ExitAccountButton } from "../ButtonComponents/ExitAccountButton";
+import { parseCookie } from "../CookieService/CookiesService";
 
 class HeaderMain extends Component {
 
     firstName:      string
+    nickName:       string
     secondName:     string
     surName:        string
     legalLevel:     string
@@ -18,21 +20,24 @@ class HeaderMain extends Component {
 
         super(props)
 
-        this.firstName = AccountStorage.firstName
-        this.secondName = AccountStorage.secondName
-        this.surName = AccountStorage.surName
-        this.legalLevel = AccountStorage.legalLevel
+        this.firstName = parseCookie("u_name")
+        this.nickName = parseCookie("u_nick")
+        this.secondName = parseCookie("u_secondname")
+        this.surName = parseCookie("u_surname")
+        this.legalLevel = parseCookie("u_legallevel");
     }
 
     render() {
+        console.log(CheckByDefaultStateOfStorage())
         console.log(AccountStorage)
-        //
+        console.log(DefaultStorage)
         if (!CheckByDefaultStateOfStorage()) {
             return (
                 <div className="header-main">
                     <div className="header-main-higher">
                         <div className="header-main-accountPage">
                             <AccountInfoElement
+                                nick = {this.nickName}
                                 name = {this.firstName}
                                 secname = {this.secondName}
                                 surname = {this.surName}
