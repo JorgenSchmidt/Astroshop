@@ -9,8 +9,7 @@ export async function RecordUserInfoToCookie (userinf: UserObject) {
         document.cookie =   "u_surname="       + userinf.surName
         document.cookie =   "u_phone="         + userinf.phone
         document.cookie =   "u_mail="          + userinf.email
-        document.cookie =   "u_citizenship="   + userinf.citizenship 
-        document.cookie =   "u_legallevel="    + userinf.legalLevel
+        document.cookie =   "u_citizenship="   + userinf.citizenship
     }
     catch(error) {
         console.log(error)

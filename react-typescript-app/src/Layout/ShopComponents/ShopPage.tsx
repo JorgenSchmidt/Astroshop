@@ -6,6 +6,7 @@ import Product from "./ProductElement";
 import MenuElement from "./ShopMenuElement";
 import GetProductElements from "../Services/ShopServices/GetProductElements";
 import GetShopMenuElements from "../Services/ShopServices/GetShopMenuElements"
+import { backendAddres } from "../AppConfiguration";
 
 export default class ShopPage extends Component {
 
@@ -46,7 +47,7 @@ export default class ShopPage extends Component {
 
     // Methods
     getResponse() {
-        return axios.get("https://localhost:44393/api/Shop/get-all")
+        return axios.get(backendAddres + "Shop/get-all")
         .then(response => this.setState(
             this.response   = response.data
         ))

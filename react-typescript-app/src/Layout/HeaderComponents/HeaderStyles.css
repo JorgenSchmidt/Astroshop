@@ -12,13 +12,12 @@
 }
 
 .header-main-accountPage {
+    display: inline-block;
     border: 3px solid #fc0;
     border-radius: 14px;
+    text-align: right;
     width: 30%;
-    padding: 12px;
-    margin-left: 72%;
-    transform: translateX(-24%);
-
+    padding: 10px;
 }
 
 .header-main-accountInfo {
@@ -30,10 +29,18 @@
 
 .header-main-accountInfoElement {
     text-align: left;
-    width: 103%;
+    word-wrap: break-word;
+    width: 83%;
     color: #ccc
 }
 
 .header-menu-main {
     text-align: center;
+}
+
+@media screen and (max-width: 725px) {
+    .header-main-accountPage {
+        width: 55%;  
+    }
+    
 }

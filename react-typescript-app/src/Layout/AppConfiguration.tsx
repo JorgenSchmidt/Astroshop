@@ -1,0 +1,1 @@
+export const backendAddres = "https://localhost:44393/api/"

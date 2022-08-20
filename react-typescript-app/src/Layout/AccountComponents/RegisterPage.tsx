@@ -35,6 +35,8 @@ class RegisterPage extends Component {
     phone:                  string
     phoneIsCorrect:         boolean
 
+    passAreSimilary:        boolean
+
     constructor (props: any) {
 
         super(props)
@@ -66,6 +68,8 @@ class RegisterPage extends Component {
 
         this.phone                  = ""
         this.phoneIsCorrect         = true
+
+        this.passAreSimilary        = true
 
     }
 
@@ -124,7 +128,7 @@ class RegisterPage extends Component {
                     this.citizenship,
                     this.email,
                     this.password,
-                    "user",
+                    "", 
                     this.phone,
                     0
                 )
@@ -155,6 +159,9 @@ class RegisterPage extends Component {
         await this.setState(
             () => this.passAgainIsCorrect = !accountfilter(this.passAgain)
         )
+        await this.setState(
+            () => this.passAreSimilary = this.passAndPassagainAreSimillary()
+        )
     }
 
     checkparams ()  {
@@ -167,13 +174,19 @@ class RegisterPage extends Component {
                 this.nickIsCorrect
     }
 
+    passAndPassagainAreSimillary() {
+        return this.passAgainIsCorrect === this.passIsCorrect
+    }
+
     render() {
         return (
             <div className="account-register font-center">
-                <p className="font-mediumlarge font-bold font-smallmargin">Регистрация</p>          
+                <p className="font-mediumlarge font-bold font-smallmargin">Регистрация</p>  
+                <div className={this.passAreSimilary ? "block-canActive" : "block-canActive active"}>
+                    <p className="font-nomargin font-center font-smallmedium font-red"> Пароли должны совпадать</p>
+                </div>        
                 <div className="account-box">                
                     <div className="account-element">
-                        
                         <p className="font-mediumsmall font-nomargin font-topsmallmarin">Имя: </p>
                         <div className={this.nameIsCorrect ? "block-canActive" : "block-canActive active"}>
                             <p className="font-nomargin font-small font-red"> Поле не может быть пустым.</p>
@@ -269,7 +282,7 @@ class RegisterPage extends Component {
                     content = "Зарегистрироваться"
                     eventname = {async () => {
                         await this.correctparams()
-                        if (this.checkparams()) {
+                        if (this.checkparams() && this.passAndPassagainAreSimillary()) {
                             await this.register()
                         }
                     }}

@@ -2,9 +2,9 @@ import { Component } from "react";
 import "./HeaderStyles.css"
 
 import { HeaderMainButton } from "../ButtonComponents/HeaderMainButton";
-import { AccountStorage, CheckByDefaultStateOfStorage, DefaultStorage} from "../GlobalStorage/AccountStorage/AccountStorage";
+import { CheckByDefaultStateOfStorage} from "../GlobalStorage/AccountStorage/AccountStorage";
 import { AccountInfoElement } from "./AccountInfoElement";
-import { ToExitAccount } from "../GlobalStorage/AccountStorage/AccountReducers";
+import { getUserField, ToExitAccount } from "../GlobalStorage/AccountStorage/AccountReducers";
 import { ExitAccountButton } from "../ButtonComponents/ExitAccountButton";
 import { parseCookie } from "../CookieService/CookiesService";
 
@@ -12,8 +12,7 @@ class HeaderMain extends Component {
 
     firstName:      string
     nickName:       string
-    secondName:     string
-    surName:        string
+    surname:        string
     legalLevel:     string
 
     constructor(props: any) {
@@ -22,16 +21,23 @@ class HeaderMain extends Component {
 
         this.firstName = parseCookie("u_name")
         this.nickName = parseCookie("u_nick")
-        this.secondName = parseCookie("u_secondname")
-        this.surName = parseCookie("u_surname")
-        this.legalLevel = parseCookie("u_legallevel");
+        this.surname = parseCookie("u_surname")
+        this.legalLevel = ""
+    }
+
+    async getlegallevelvalue () {
+        const val: string = await getUserField("legalLevel");
+        await this.setState(
+            () => this.legalLevel = val
+        ) 
     }
 
     render() {
-        console.log(CheckByDefaultStateOfStorage())
-        console.log(AccountStorage)
-        console.log(DefaultStorage)
         if (!CheckByDefaultStateOfStorage()) {
+            // Костыль...
+            if (this.legalLevel === "") {
+                this.getlegallevelvalue()
+            }
             return (
                 <div className="header-main">
                     <div className="header-main-higher">
@@ -39,8 +45,7 @@ class HeaderMain extends Component {
                             <AccountInfoElement
                                 nick = {this.nickName}
                                 name = {this.firstName}
-                                secname = {this.secondName}
-                                surname = {this.surName}
+                                surname = {this.surname}
                                 legalLevel = {this.legalLevel}
                             />
                             <ExitAccountButton

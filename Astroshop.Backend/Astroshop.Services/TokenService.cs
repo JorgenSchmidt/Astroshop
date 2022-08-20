@@ -70,9 +70,9 @@ namespace Astroshop.Services
                 Phone = fields[4],
                 Email = fields[5],
                 ID = Convert.ToInt32(fields[6]),
-                Password = "",
+                Password = " ",
                 IsBanned = Convert.ToBoolean(fields[8]),
-                LegalLevel = fields[9].ToString(),
+                LegalLevel = fields[9],
                 NickName = fields[10],
             };
             return user;

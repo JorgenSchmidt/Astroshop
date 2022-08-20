@@ -46,7 +46,7 @@ export let AccountStorage = new UserObject (
     parseCookie("u_citizenship"),
     parseCookie("u_mail"),
     "",
-    parseCookie("u_legallevel"),
+    "",
     parseCookie("u_phone"),
     0
 )
@@ -68,6 +68,5 @@ export function CheckByDefaultStateOfStorage() {
     return AccountStorage.firstName === DefaultStorage.firstName
     &&AccountStorage.secondName === DefaultStorage.secondName
     &&AccountStorage.surName === DefaultStorage.surName
-    &&AccountStorage.legalLevel === DefaultStorage.legalLevel
     &&AccountStorage.nickName === DefaultStorage.nickName
 }

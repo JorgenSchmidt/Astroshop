@@ -4,6 +4,7 @@ import "./ShopStyles.css"
 
 import Product from "./ProductElement";
 import {LinkButton} from "../ButtonComponents/LinkButton"
+import { backendAddres } from "../AppConfiguration";
 
 export default class ProductPage extends Component {
 
@@ -23,7 +24,7 @@ export default class ProductPage extends Component {
 
     // Methods
     async getResponse() {
-        return axios.get("https://localhost:44393/api/Shop/get/" + this.getCurrentPage())
+        return axios.get(backendAddres + "Shop/get/" + this.getCurrentPage())
         .then(response => this.setState(
             this.response   = response.data
         ))

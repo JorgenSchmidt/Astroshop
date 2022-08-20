@@ -51,6 +51,7 @@ namespace Astroshop.Data.PostgreeSQL.Services
             {
                 User user = JsonSerializer.Deserialize<User>(input.ToString());
                 _logger.LogInformation("(S) LoginUser method: Response has been sent");
+                user.LegalLevel = "user";
                 return new StringResponse
                 {
                     Body = await TokenService.GetToken(user),
@@ -70,7 +71,6 @@ namespace Astroshop.Data.PostgreeSQL.Services
 
         public async Task<Response> LoginUser(object input)
         {
-            
             throw new System.NotImplementedException();
         }
 

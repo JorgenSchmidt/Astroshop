@@ -1,14 +1,14 @@
 //                                                   				 lifetime measured in days
 export async function writeCookie(cookiename: string, value: string, lifetime: number) 
 {
-  var date = new Date;
+  var date = new Date();
   date.setDate(date.getDate() + lifetime);
   document.cookie = await cookiename + "=" + value + "; path=/; expires=" + date.toUTCString();
 }
 
 export async function writeCookieWithoutDate(cookiename: string, value: string) 
 {
-  document.cookie = await cookiename + "=" + value + "; path=/;";
+  document.cookie = await cookiename + "=" + value + ";";
 }
 
 export function parseCookie(targetfield: string) : string {
@@ -21,6 +21,17 @@ export function parseCookie(targetfield: string) : string {
 		}
 	}
 	return ans;
+}
+
+export function cookieIsExist(field: string) : boolean {
+	let fields = document.cookie.split(";")
+	for (var q = 0; q < fields.length; q++) {
+		let i = fields[q].split("=")
+		if (i[0].toString().split(' ').join('') === field.toString()) {
+			return true;
+		}
+	}
+	return false;
 }
 
 export async function сookiesDelete() {

@@ -1,4 +1,6 @@
 import axios from "axios";
+import { backendAddres } from "../../AppConfiguration";
+import { cookieIsExist, parseCookie, writeCookieWithoutDate, сookiesDelete } from "../../CookieService/CookiesService";
 import { RecordUserInfoToCookie } from "../../CookieService/RecordUserInfo";
 import UserObject, { AccountStorage, DefaultStorage } from "./AccountStorage"
 
@@ -70,7 +72,7 @@ export async function ToRegisterReducer (GettedUserInfo: UserObject) {
 
     // Get and save token part
     await axios.post (
-    "https://localhost:44393/api/User/Register",
+    backendAddres + "User/Register",
     {
         "ID": 1,
         "FirstName": GettedUserInfo.firstName,
@@ -87,6 +89,7 @@ export async function ToRegisterReducer (GettedUserInfo: UserObject) {
     ).then (
         function (response) {
             token = response.data.body
+            writeCookieWithoutDate("token", token.toString())
         }
     ) 
     .catch (
@@ -97,7 +100,7 @@ export async function ToRegisterReducer (GettedUserInfo: UserObject) {
 
     // Send token to register part
     await axios.post (
-    "https://localhost:44393/api/User/Translate",
+    backendAddres + "User/Translate",
     {
         "Body": token
     }
@@ -112,10 +115,8 @@ export async function ToRegisterReducer (GettedUserInfo: UserObject) {
         }
     )
     
-    console.log(userinf);
     await CopyUserObjectToStorage(userinf)
     await RecordUserInfoToCookie(AccountStorage);
-    console.log(document.cookie)
     document.location = "/"
 }
 
@@ -125,10 +126,48 @@ export async function ToLoginReducer (token: string)
 }
 
 export async function ToExitAccount () {
-    return;
+    сookiesDelete()
+    document.location = "/"
 }
 
 export async function GetUserInfo () 
 {
     return AccountStorage;
+}
+
+export async function getUserField(targetField: string): Promise<string> {
+
+    if (!cookieIsExist("token")) {
+        return "";
+    }
+    let ans = ""
+    await axios.post (
+    backendAddres + "User/Translate",
+    {
+        "Body": parseCookie("token")
+    }
+    ).then (
+        response => { 
+            switch (targetField) {
+                case "legalLevel":
+                    ans = response.data.body.legalLevel
+                break;
+                case "firstName":
+                    ans = response.data.body.firstName
+                break;
+                case "secondName":
+                    ans = response.data.body.secondName
+                break;
+                case "surName":
+                    ans = response.data.body.surName
+                break;
+            }
+        }
+    ) 
+    .catch (
+        function (error) {
+            console.log(error)
+        }
+    )    
+    return ans;
 }
