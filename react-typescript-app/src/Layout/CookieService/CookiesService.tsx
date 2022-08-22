@@ -1,4 +1,4 @@
-//                                                   				 lifetime measured in days
+// NTK: lifetime measured in days
 export async function writeCookie(cookiename: string, value: string, lifetime: number) 
 {
   var date = new Date();

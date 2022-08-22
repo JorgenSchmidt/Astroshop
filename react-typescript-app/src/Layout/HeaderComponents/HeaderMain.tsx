@@ -4,9 +4,10 @@ import "./HeaderStyles.css"
 import { HeaderMainButton } from "../ButtonComponents/HeaderMainButton";
 import { CheckByDefaultStateOfStorage} from "../GlobalStorage/AccountStorage/AccountStorage";
 import { AccountInfoElement } from "./AccountInfoElement";
-import { getUserField, ToExitAccount } from "../GlobalStorage/AccountStorage/AccountReducers";
+import { ToExitAccount } from "../GlobalStorage/AccountStorage/AccountReducers";
 import { ExitAccountButton } from "../ButtonComponents/ExitAccountButton";
 import { parseCookie } from "../CookieService/CookiesService";
+import { getUserField } from "../Services/AccountRequestService";
 
 class HeaderMain extends Component {
 

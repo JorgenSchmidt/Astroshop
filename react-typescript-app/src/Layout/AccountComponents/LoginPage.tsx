@@ -2,7 +2,7 @@ import { Component } from "react";
 import "./AccountStyles.css";
 
 import {EventButton} from "../ButtonComponents/EventButton"
-import accountfilter from "./AccountFilter";
+import { filter } from "../Services/StringFilter";
 
 class LoginPage extends Component {
 
@@ -42,10 +42,10 @@ class LoginPage extends Component {
 
     async login () {
         this.setState(
-            () => this.emailIsCorrect = !accountfilter(this.email)
+            () => this.emailIsCorrect = !filter(this.email)
         )
         this.setState(
-            () => this.passIsCorrect = !accountfilter(this.password)
+            () => this.passIsCorrect = !filter(this.password)
         )
         return await 0;
     }

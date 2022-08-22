@@ -2,7 +2,7 @@ import { Component } from "react";
 import "./AccountStyles.css";
 
 import {EventButton} from "../ButtonComponents/EventButton"
-import accountfilter from "./AccountFilter";
+import { filter } from "../Services/StringFilter";
 
 class RecoverPasswordPage extends Component {
 
@@ -32,7 +32,7 @@ class RecoverPasswordPage extends Component {
 
     async recover  ()  {
         this.setState(
-            () => this.emailIsCorrect = !accountfilter(this.email)
+            () => this.emailIsCorrect = !filter(this.email)
         )
         return await 0;
     }

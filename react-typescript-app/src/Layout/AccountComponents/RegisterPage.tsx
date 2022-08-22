@@ -2,9 +2,9 @@ import { Component } from "react";
 import "./AccountStyles.css";
 
 import {EventButton} from "../ButtonComponents/EventButton"
-import accountfilter from "./AccountFilter";
 import { ToRegisterReducer } from "../GlobalStorage/AccountStorage/AccountReducers";
 import UserObject from "../GlobalStorage/AccountStorage/AccountStorage";
+import { filter } from "../Services/StringFilter";
 
 class RegisterPage extends Component {
 
@@ -139,25 +139,25 @@ class RegisterPage extends Component {
 
     async correctparams () {
         await this.setState(
-            () => this.nameIsCorrect = !accountfilter(this.name)
+            () => this.nameIsCorrect = !filter(this.name)
         )
         await this.setState(
-            () => this.nickIsCorrect = !accountfilter(this.nick)
+            () => this.nickIsCorrect = !filter(this.nick)
         )
         await this.setState(
-            () => this.secnameIsCorrect = !accountfilter(this.secname)
+            () => this.secnameIsCorrect = !filter(this.secname)
         )
         await this.setState(
-            () => this.surnameIsCorrect = !accountfilter(this.surname)
+            () => this.surnameIsCorrect = !filter(this.surname)
         )
         await this.setState(
-            () => this.emailIsCorrect = !accountfilter(this.email)
+            () => this.emailIsCorrect = !filter(this.email)
         )
         await this.setState(
-            () => this.passIsCorrect = !accountfilter(this.password)
+            () => this.passIsCorrect = !filter(this.password)
         )
         await this.setState(
-            () => this.passAgainIsCorrect = !accountfilter(this.passAgain)
+            () => this.passAgainIsCorrect = !filter(this.passAgain)
         )
         await this.setState(
             () => this.passAreSimilary = this.passAndPassagainAreSimillary()
@@ -175,7 +175,7 @@ class RegisterPage extends Component {
     }
 
     passAndPassagainAreSimillary() {
-        return this.passAgainIsCorrect === this.passIsCorrect
+        return this.passAgain === this.password
     }
 
     render() {
@@ -282,7 +282,8 @@ class RegisterPage extends Component {
                     content = "Зарегистрироваться"
                     eventname = {async () => {
                         await this.correctparams()
-                        if (this.checkparams() && this.passAndPassagainAreSimillary()) {
+                        console.log(this.passAndPassagainAreSimillary() + " " + this.password + " " + this.passAgain)
+                        if (await this.checkparams() && await this.passAndPassagainAreSimillary()) {
                             await this.register()
                         }
                     }}

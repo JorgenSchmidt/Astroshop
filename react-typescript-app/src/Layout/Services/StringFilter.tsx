@@ -1,6 +1,5 @@
-export default function accountfilter (x: string)
-{
-   return ( 
+export function filter(x: string) {
+    return(
         (typeof x == 'undefined')
                     ||
         (x === null) 
@@ -14,5 +13,5 @@ export default function accountfilter (x: string)
         (!/[^\s]/.test(x))
                     ||
         (/^\s*$/.test(x))
-  );
+    )
 }

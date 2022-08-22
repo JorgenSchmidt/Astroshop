@@ -1,6 +1,6 @@
+import './AppStyles.css';
 import { Component } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import './AppStyles.css';
 
 import HeaderMain from './HeaderComponents/HeaderMain'
 import HeaderMenu from './HeaderComponents/HeaderMenu';
